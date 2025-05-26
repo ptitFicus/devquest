@@ -1,0 +1,16 @@
+.selectable-member:hover {
+  cursor: pointer;
+  &::after {
+    content: "+";
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10rem;
+    opacity: 50%;
+    background-color: white;
+  }
+}
