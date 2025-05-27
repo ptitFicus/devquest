@@ -8,28 +8,46 @@ export function TeamEditor() {
 
   return (
     <div>
-      <h1>New team creation</h1>
-      <label>
-        Team name
-        <input type="text" />
+      <h1>Création d'un nouveau groupe</h1>
+      <h2>Membres du groupe</h2>
+      {members.map((member) => {
+        return (
+          <TeamMember
+            details={member}
+            light={true}
+            actionText="Renvoyer"
+            onAction={() => {
+              setMembers((members) =>
+                members.filter((m) => m.name !== member.name)
+              );
+            }}
+          />
+        );
+      })}
+      <label style={{ display: "block" }}>
+        Nom du groupe
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e?.target?.value)}
+        />
       </label>
-      <h2>Team members</h2>
-      {members.length === 0
-        ? "No members"
-        : members.map((member) => {
-            return (
-              <TeamMember
-                details={member}
-                light={true}
-                actionText="Renvoyer"
-                onAction={() => {
-                  setMembers((members) =>
-                    members.filter((m) => m.name !== member.name)
-                  );
-                }}
-              />
-            );
-          })}
+      <button
+        onClick={(e) => {
+          fetch("/api/groupes", {
+            method: "POST",
+            body: JSON.stringify({
+              name: name,
+              heros: members,
+            }),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+        }}
+      >
+        Créer le groupe
+      </button>
       <h2>Available members</h2>
       {MOCK_MEMBERS.filter(
         (member) => !members.find((m) => m.name === member.name)
