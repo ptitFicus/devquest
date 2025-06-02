@@ -1,8 +1,12 @@
 import { useState } from "react";
-import { MOCK_MEMBERS } from "./MemberList";
 import { TeamMember } from "./TeamMember";
+import { TeamDetails } from "./TeamDetails";
 
-export function TeamEditor() {
+export function TeamEditor({
+  availableMembers,
+}: {
+  availableMembers: TeamMember[];
+}) {
   const [name, setName] = useState("");
   const [members, setMembers] = useState<TeamMember[]>([]);
 
@@ -10,20 +14,22 @@ export function TeamEditor() {
     <div>
       <h1>Création d'un nouveau groupe</h1>
       <h2>Membres du groupe</h2>
-      {members.map((member) => {
-        return (
-          <TeamMember
-            details={member}
-            light={true}
-            actionText="Renvoyer"
-            onAction={() => {
-              setMembers((members) =>
-                members.filter((m) => m.name !== member.name)
-              );
-            }}
-          />
-        );
-      })}
+      <TeamDetails
+        actions={[]}
+        team={{ name, heros: members }}
+        memberActions={[
+          (member) => {
+            return {
+              name: `Renvoyer ${member.name}`,
+              callback: () => {
+                setMembers((members) =>
+                  members.filter((m) => m.name !== member.name)
+                );
+              },
+            };
+          },
+        ]}
+      />
       <label style={{ display: "block" }}>
         Nom du groupe
         <input
@@ -33,8 +39,8 @@ export function TeamEditor() {
         />
       </label>
       <button
-        onClick={(e) => {
-          fetch("/api/groupes", {
+        onClick={() => {
+          fetch("/api/groupe", {
             method: "POST",
             body: JSON.stringify({
               name: name,
@@ -49,20 +55,26 @@ export function TeamEditor() {
         Créer le groupe
       </button>
       <h2>Available members</h2>
-      {MOCK_MEMBERS.filter(
-        (member) => !members.find((m) => m.name === member.name)
-      ).map((member) => {
-        return (
-          <div style={{ margin: "4px" }}>
-            <TeamMember
-              details={member}
-              light={false}
-              actionText="Recruter"
-              onAction={() => setMembers((members) => [...members, member])}
-            />
-          </div>
-        );
-      })}
+      {availableMembers
+        .filter((member) => !members.find((m) => m.name === member.name))
+        .map((member) => {
+          return (
+            <div style={{ margin: "4px" }}>
+              <TeamMember
+                details={member}
+                light={false}
+                actions={[
+                  {
+                    name: `Recruter ${member.name}`,
+                    callback: () =>
+                      setMembers((members) => [...members, member]),
+                  },
+                ]}
+                achievements={true}
+              />
+            </div>
+          );
+        })}
     </div>
   );
 }

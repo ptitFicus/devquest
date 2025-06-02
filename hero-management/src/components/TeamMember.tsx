@@ -31,38 +31,45 @@ export interface TeamMember {
 export function TeamMember(props: {
   details: TeamMember;
   light: boolean;
-  actionText: string;
-  onAction: () => any;
+  actions: { name: string; callback: () => any }[];
+  achievements: boolean;
 }) {
   const { role, name, achievements } = props.details;
   return (
     <div
       style={{
-        border: "1px solid blue",
+        padding: "0.5rem 1rem",
+        border: "1px solid red",
+        backgroundColor: "orange",
+        borderRadius: "0.5rem",
         display: "flex",
         flexDirection: "column",
         position: "relative",
+        justifyContent: "center",
+        alignItems: "center",
       }}
     >
-      <h3 style={{ display: "flex", flexDirection: "row" }}>
+      <h3 style={{ display: "flex", flexDirection: "row", margin: "0" }}>
         {name}&nbsp;
-        <img
-          src={classLogo(role)}
-          style={{ width: "1.5rem", height: "1.5rem" }}
-        />
       </h3>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        {!props?.light && (
-          <ul style={{ listStyleType: "none", padding: "0" }}>
-            {achievements.map((achievement) => {
-              return <li>{achievement}</li>;
-            })}
-          </ul>
-        )}
-        <button style={{ margin: "2rem" }} onClick={props.onAction}>
-          {props.actionText}
-        </button>
-      </div>
+      <img
+        src={classLogo(role)}
+        style={{ width: "1.5rem", height: "1.5rem" }}
+      />
+      {props?.achievements && (
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          {!props?.light && (
+            <ul style={{ listStyleType: "none", padding: "0" }}>
+              {achievements.map((achievement) => {
+                return <li>{achievement}</li>;
+              })}
+            </ul>
+          )}
+        </div>
+      )}
+      {props?.actions?.map(({ name, callback }) => {
+        return <button onClick={callback}>{name}</button>;
+      })}
     </div>
   );
 }
