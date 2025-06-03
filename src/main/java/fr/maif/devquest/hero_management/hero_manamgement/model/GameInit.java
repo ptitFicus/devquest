@@ -1,4 +1,4 @@
 package fr.maif.devquest.hero_management.hero_manamgement.model;
 
-public record GameStatus(String name, long money) {
+public record GameInit(String name, Long seed) {
 }

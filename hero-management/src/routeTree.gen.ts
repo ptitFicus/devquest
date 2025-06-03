@@ -12,6 +12,7 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as NewTeamImport } from './routes/new-team'
+import { Route as LandingPageImport } from './routes/landing-page'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
@@ -19,6 +20,12 @@ import { Route as IndexImport } from './routes/index'
 const NewTeamRoute = NewTeamImport.update({
   id: '/new-team',
   path: '/new-team',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const LandingPageRoute = LandingPageImport.update({
+  id: '/landing-page',
+  path: '/landing-page',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -39,6 +46,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
+    '/landing-page': {
+      id: '/landing-page'
+      path: '/landing-page'
+      fullPath: '/landing-page'
+      preLoaderRoute: typeof LandingPageImport
+      parentRoute: typeof rootRoute
+    }
     '/new-team': {
       id: '/new-team'
       path: '/new-team'
@@ -53,36 +67,41 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/landing-page': typeof LandingPageRoute
   '/new-team': typeof NewTeamRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/landing-page': typeof LandingPageRoute
   '/new-team': typeof NewTeamRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
+  '/landing-page': typeof LandingPageRoute
   '/new-team': typeof NewTeamRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/new-team'
+  fullPaths: '/' | '/landing-page' | '/new-team'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/new-team'
-  id: '__root__' | '/' | '/new-team'
+  to: '/' | '/landing-page' | '/new-team'
+  id: '__root__' | '/' | '/landing-page' | '/new-team'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  LandingPageRoute: typeof LandingPageRoute
   NewTeamRoute: typeof NewTeamRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  LandingPageRoute: LandingPageRoute,
   NewTeamRoute: NewTeamRoute,
 }
 
@@ -97,11 +116,15 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
+        "/landing-page",
         "/new-team"
       ]
     },
     "/": {
       "filePath": "index.tsx"
+    },
+    "/landing-page": {
+      "filePath": "landing-page.tsx"
     },
     "/new-team": {
       "filePath": "new-team.tsx"

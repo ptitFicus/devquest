@@ -56,18 +56,45 @@ function Layout() {
       }}
     >
       <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
-          alignItems: "center",
-          padding: "0 2rem",
-        }}
+        style={{ height: "100vh", display: "flex", flexDirection: "column" }}
       >
-        <h1>Hero management</h1>
-        <div style={{ fontWeight: "bold", fontSize: "1.2rem" }}>{money} 💰</div>
+        <header
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            flexGrow: 0,
+            justifyContent: "space-between",
+            alignItems: "center",
+            padding: "0 2rem",
+            backgroundColor: "rgba(255,255,255,0.5)",
+            zIndex: 100,
+          }}
+        >
+          <h1>Hero management</h1>
+          <div>
+            {" "}
+            <div
+              data-testid="money"
+              style={{ fontWeight: "bold", fontSize: "1.2rem" }}
+            >
+              {money} 💰
+            </div>
+            <button
+              onClick={() => {
+                fetch("/api/_reset", { method: "DELETE" }).then(() => {
+                  location.reload();
+                });
+              }}
+            >
+              Restart game
+            </button>
+          </div>
+        </header>
+
+        <div style={{ flexGrow: "1" }}>
+          <RouterProvider router={router} />
+        </div>
       </div>
-      <RouterProvider router={router} />
     </MoneyContext.Provider>
   );
 }

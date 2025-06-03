@@ -1,5 +1,6 @@
 package fr.maif.devquest.hero_management.hero_manamgement.datastore;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import fr.maif.devquest.hero_management.hero_manamgement.exceptions.InvalidHeroException;
@@ -19,11 +20,18 @@ import java.util.LinkedList;
 @Repository
 public class HeroDatastore {
     public Deque<Hero> heros = new LinkedList<>();
+    private ObjectMapper mapper;
 
-    public HeroDatastore(ObjectMapper mapper) throws IOException {
+    private Deque<Hero> readHerosFromFile() throws IOException {
         File resource = new ClassPathResource("heros.json").getFile();
         var groupeString = Files.readString(resource.toPath());
-        heros = mapper.readValue(groupeString, new TypeReference<Deque<Hero>>() {});
+        return mapper.readValue(groupeString, new TypeReference<Deque<Hero>>() {});
+    }
+
+
+    public HeroDatastore(ObjectMapper mapper) throws IOException {
+        this.mapper = mapper;
+        this.heros = readHerosFromFile();
     }
 
     public void createHero(Hero hero) {
@@ -32,5 +40,13 @@ public class HeroDatastore {
             throw new InvalidHeroException();
         }
         heros.addFirst(hero);
+    }
+
+    public void reset() {
+        try {
+            this.heros = readHerosFromFile();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

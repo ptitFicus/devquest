@@ -25,7 +25,6 @@ export function TeamEditor({
 }: {
   availableMembers: TeamMember[];
 }) {
-  const [name, setName] = useState("");
   const [members, setMembers] = useState<TeamMember[]>([]);
   const navigation = useNavigate({ from: "/new-team" });
   const currentTeam: Team = Route.useSearch();
@@ -37,18 +36,16 @@ export function TeamEditor({
   return (
     <div>
       <h1>
-        {currentTeam?.name
-          ? `Édition du groupe ${currentTeam?.name}`
+        {currentTeam?.heros
+          ? `Édition du groupe`
           : "Création d'un nouveau groupe"}
       </h1>
       <h2>Membres du groupe</h2>
       <TeamDetails
         actions={[]}
-        team={{ name, heros: (currentTeam?.heros ?? []).concat(members) }}
+        team={{ heros: (currentTeam?.heros ?? []).concat(members) }}
         memberActions={[
           (member) => {
-            console.log("currentTeam", currentTeam);
-            console.log("member", member);
             if (currentTeam?.heros?.find((m) => m.name === member.name)) {
               return {};
             } else
@@ -63,21 +60,11 @@ export function TeamEditor({
           },
         ]}
       />
-      <label style={{ display: "block" }}>
-        Nom du groupe
-        <input
-          type="text"
-          disabled={Boolean(currentTeam?.name)}
-          value={currentTeam ? currentTeam.name : name}
-          onChange={(e) => setName(e?.target?.value)}
-        />
-      </label>
       <button
         onClick={() => {
           fetch("/api/groupe", {
             method: "POST",
             body: JSON.stringify({
-              name: currentTeam?.name ?? name,
               heros: (currentTeam?.heros ?? []).concat(members),
             }),
             headers: {
@@ -88,7 +75,7 @@ export function TeamEditor({
             .then(() => navigation({ to: "/" }));
         }}
       >
-        {currentTeam?.name ? "Mettre à jour le groupe" : "Créer le groupe"}
+        {currentTeam?.heros ? "Mettre à jour le groupe" : "Créer le groupe"}
       </button>
       <h2>Available members</h2>
       {!creating && (
@@ -151,9 +138,10 @@ function HeroForm(props: { onSubmit: (member: TeamMember) => any }) {
     <form
       onSubmit={(event) => {
         event.preventDefault();
-        const name = event.target.name.value;
-        const classe = event.target.classe.value;
-        const exploits = event.target.exploits.value.split("\n");
+        const target = event.target as any;
+        const name = target.name.value;
+        const classe = target.classe.value;
+        const exploits = target.exploits.value.split("\n");
 
         props?.onSubmit({
           name,

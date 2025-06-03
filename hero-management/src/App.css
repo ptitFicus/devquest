@@ -1,16 +1,52 @@
-.selectable-member:hover {
-  cursor: pointer;
-  &::after {
-    content: "+";
-    width: 100%;
-    height: 100%;
-    display: block;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 10rem;
-    opacity: 50%;
-    background-color: white;
+:root {
+  --sable: #f1ddb6;
+  --vert: #192811;
+  --vert-clair: #a69b02;
+  --marron: #594848;
+  --bleu-clair: #96cbd9;
+  --orange-clair: #f2aa6b;
+  --orange: #f29543;
+  --marron-clair: #7d6969d1;
+  --violet-fonce: #260742;
+  --violet: #360362;
+  --violet-clair: #551b7e;
+  --rose: #efbfb7;
+  --dark: #000;
+  --primary-color: var(--violet);
+  --secondary-color: var(--violet-clair);
+  --tertiary-color: var(--rose);
+  --font-source-sans-pro:
+    "__Source_Sans_3_1fdbab", "__Source_Sans_3_Fallback_1fdbab";
+  --font-teko: "__Teko_a78c55", "__Teko_Fallback_a78c55";
+  font-family: var(--font-teko), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.devquest-btn {
+  padding: 0.25em 1em;
+  font-weight: 700;
+  font-size: 1.75rem;
+  text-decoration: none;
+  transition: 0.25s;
+  text-align: center;
+  border: 2px solid var(--tertiary-color);
+  background-color: var(--primary-color);
+  color: var(--tertiary-color);
+  margin-top: 0.5rem;
+}
+
+.devquest-btn-secondary {
+  padding: 0.25em 0.5em;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: 0.25s;
+  text-align: center;
+  border: 2px solid var(--tertiary-color);
+  background-color: var(--sable);
+  color: var(--primary-color);
+  margin-top: 0.5rem;
+
+  &:hover {
+    cursor: pointer;
   }
 }

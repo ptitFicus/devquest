@@ -1,7 +1,7 @@
 package fr.maif.devquest.hero_management.hero_manamgement;
 
 import fr.maif.devquest.hero_management.hero_manamgement.datastore.GroupeDatastore;
-import fr.maif.devquest.hero_management.hero_manamgement.datastore.MoneyDatastore;
+import fr.maif.devquest.hero_management.hero_manamgement.datastore.GameDatastore;
 import fr.maif.devquest.hero_management.hero_manamgement.model.Groupe;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,12 +12,12 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/api/groupe")
 public class GroupeController {
-    private final MoneyDatastore moneyDatastore;
+    private final GameDatastore gameDatastore;
     private GroupeDatastore groupeDatastore;
 
-    public GroupeController(GroupeDatastore groupeDatastore, MoneyDatastore moneyDatastore) {
+    public GroupeController(GroupeDatastore groupeDatastore, GameDatastore gameDatastore) {
         this.groupeDatastore = groupeDatastore;
-        this.moneyDatastore = moneyDatastore;
+        this.gameDatastore = gameDatastore;
     }
 
     @GetMapping
@@ -34,7 +34,7 @@ public class GroupeController {
     public ResponseEntity<Object> createGroupe(@RequestBody Groupe newGroupe) {
         Collection<String> oldMembers = groupeDatastore.groupe.map(g -> g.heros().stream().map(h -> h.name()).collect(Collectors.toList())).orElseGet(Collections::emptyList);
         int diff = newGroupe.heros().size() - oldMembers.size();
-        moneyDatastore.withdraw(diff * 1_000L);
+        gameDatastore.withdraw(diff * 1_000L);
         groupeDatastore.saveGroupe(newGroupe);
         return ResponseEntity.ok("");
     }

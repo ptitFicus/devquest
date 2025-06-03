@@ -8,12 +8,12 @@ export function TeamDetails({
 }: {
   team: Team;
   memberActions: ((member: TeamMember) => {
-    name: string;
-    callback: () => any;
+    name?: string;
+    callback?: () => any;
   })[];
   actions: {
-    name: string;
-    callback: () => any;
+    name?: string;
+    callback?: () => any;
   }[];
 }) {
   return (
@@ -45,7 +45,7 @@ export function TeamDetails({
       </ul>
       {actions?.map(({ name, callback }) => {
         return (
-          <button type="button" onClick={() => callback()}>
+          <button type="button" onClick={() => callback?.()}>
             {name}
           </button>
         );

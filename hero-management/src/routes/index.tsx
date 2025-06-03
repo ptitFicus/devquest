@@ -1,10 +1,16 @@
-import { createFileRoute, Link, useRouter } from "@tanstack/react-router";
+import {
+  createFileRoute,
+  Link,
+  redirect,
+  useRouter,
+} from "@tanstack/react-router";
 import "../App.css";
 import { fetchQuests, fetchTeam } from "@/queries";
 import type { Quest, QuestResult, Team } from "@/types";
 import { TeamDetails } from "@/components/TeamDetails";
 import { useContext, useRef, useState } from "react";
 import { MoneyContext } from "@/moneyContext";
+import index from "../assets/index.png";
 
 export const Route = createFileRoute("/")({
   component: App,
@@ -12,6 +18,17 @@ export const Route = createFileRoute("/")({
     return Promise.all([fetchTeam(), fetchQuests()]).then(([team, quests]) => {
       return { team, quests };
     });
+  },
+  beforeLoad: async () => {
+    const gameInfo = await fetch("/api/game").then((r) => r.json());
+    if (gameInfo.name === null) {
+      throw redirect({
+        to: "/landing-page",
+        search: {
+          redirect: location.href,
+        },
+      });
+    }
   },
 });
 
@@ -21,7 +38,17 @@ function App() {
 
   if ((!team || team?.heros?.length === 0) && money < 1000) {
     return (
-      <div>
+      <div
+        style={{
+          position: "absolute",
+          top: "0",
+          bottom: "0",
+          right: "0",
+          left: "0",
+          backgroundImage: `url(${index})`,
+          backgroundColor: "rgba(255,255,255,0.5)",
+        }}
+      >
         <div>Partie terminée</div>
         <button
           onClick={() => {
@@ -37,35 +64,64 @@ function App() {
   }
 
   return (
-    <div style={{ padding: "0 2.5rem" }}>
-      <div style={{ display: "flex", flexDirection: "row" }}>
-        <div style={{ width: "50%" }}>
-          <div>
-            {team ? (
-              <>
-                <TeamDisplay team={team} />
-                <Link to="/new-team" search={team}>
-                  Edit team
-                </Link>
-              </>
-            ) : (
-              <Link to="/new-team">Create your team</Link>
-            )}
-          </div>
-        </div>
-        <div style={{ width: "45%" }}>
-          <QuestList quests={quests} canStart={team?.heros?.length > 0} />
-        </div>
-      </div>
-      <button
-        onClick={() => {
-          fetch("/api/_reset", { method: "DELETE" }).then(() => {
-            location.reload();
-          });
+    <div
+      style={{
+        backgroundImage: `url(${index})`,
+        height: "100%",
+      }}
+    >
+      <div
+        style={{
+          padding: "0 2.5rem",
+          display: "flex",
+          flexDirection: "row",
+          backgroundColor: "rgba(255,255,255,0.5)",
+          height: "100%",
         }}
       >
-        Restart game
-      </button>
+        <div
+          style={{
+            width: "50%",
+            height: "33%",
+            flexGrow: 1,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            backgroundImage: "",
+          }}
+        >
+          {team ? (
+            <>
+              <TeamDisplay team={team} />
+              {team.heros.length < 4 && (
+                <Link className="devquest-btn" to="/new-team" search={team}>
+                  Compléter l'équipe
+                </Link>
+              )}
+            </>
+          ) : (
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                height: "100%",
+              }}
+            >
+              <Link to="/new-team" className="devquest-btn">
+                Créé ton équipe !
+              </Link>
+            </div>
+          )}
+        </div>
+        {team && (
+          <div style={{ width: "45%" }}>
+            <QuestList quests={quests} canStart={team?.heros?.length > 0} />
+          </div>
+        )}
+      </div>
     </div>
   );
 }
@@ -73,7 +129,6 @@ function App() {
 export function TeamDisplay({ team }: { team: Team }) {
   return (
     <div>
-      <h2>{team.name}</h2>
       {team.heros.length === 0 ? (
         "Aucun membre dans votre groupe"
       ) : (
@@ -96,12 +151,14 @@ function QuestList({
   const { refreshMoney, money } = useContext(MoneyContext);
   return (
     <>
+      <h3>Quêtes</h3>
       <ul>
         {quests.map((quest) => {
           return (
             <li>
               {quest.nom}({quest.difficulte})
               <button
+                className="devquest-btn-secondary"
                 disabled={!canStart}
                 type="button"
                 onClick={() => {
@@ -124,6 +181,8 @@ function QuestList({
         })}
       </ul>
       <button
+        style={{ marginLeft: "10rem" }}
+        className="devquest-btn-secondary"
         onClick={() =>
           fetch(`/api/quetes/_reroll`, { method: "POST" }).then(() => {
             route.invalidate();

@@ -3,8 +3,10 @@ package fr.maif.devquest.hero_management.hero_manamgement.datastore;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class MoneyDatastore {
+public class GameDatastore {
     private long amount = 10_000;
+    private String name;
+    private Long seed;
 
     public long remainingMoney() {
         return amount;
@@ -26,5 +28,16 @@ public class MoneyDatastore {
 
     public void reset() {
         amount = 10_000;
+        name = null;
+        seed = null;
+    }
+
+    public void init(String name, Long seed) {
+        this.name = name;
+        this.seed = seed;
+    }
+
+    public String getName() {
+        return name;
     }
 }

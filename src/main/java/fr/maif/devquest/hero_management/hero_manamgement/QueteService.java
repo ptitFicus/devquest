@@ -3,7 +3,7 @@ package fr.maif.devquest.hero_management.hero_manamgement;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import fr.maif.devquest.hero_management.hero_manamgement.datastore.GroupeDatastore;
-import fr.maif.devquest.hero_management.hero_manamgement.datastore.MoneyDatastore;
+import fr.maif.devquest.hero_management.hero_manamgement.datastore.GameDatastore;
 import fr.maif.devquest.hero_management.hero_manamgement.datastore.QueteRepository;
 import fr.maif.devquest.hero_management.hero_manamgement.model.*;
 import org.springframework.core.io.ClassPathResource;
@@ -18,18 +18,25 @@ import java.util.*;
 public class QueteService {
     private final QueteRepository queteRepository;
     private final GroupeDatastore groupeDatastore;
-    private final MoneyDatastore moneyDatastore;
-    private final Random random = new Random();
+    private final GameDatastore gameDatastore;
+    private Random random = new Random();
     private final ObjectMapper mapper;
 
-    public QueteService(QueteRepository queteRepository, GroupeDatastore groupeDatastore, MoneyDatastore moneyDatastore, ObjectMapper mapper) {
+    public QueteService(QueteRepository queteRepository, GroupeDatastore groupeDatastore, GameDatastore gameDatastore, ObjectMapper mapper) {
         this.queteRepository = queteRepository;
         this.groupeDatastore = groupeDatastore;
-        this.moneyDatastore = moneyDatastore;
+        this.gameDatastore = gameDatastore;
         this.mapper = mapper;
         this.queteRepository.createQuete(generateNewQuest());
         this.queteRepository.createQuete(generateNewQuest());
         this.queteRepository.createQuete(generateNewQuest());
+    }
+
+    public void setSeed(Long seed) {
+        if(Objects.isNull(seed)) {
+            this.random = new Random();
+        }
+        this.random = new Random(seed);
     }
 
     public List<Quete> readQuetes() {
@@ -55,7 +62,7 @@ public class QueteService {
 
                     queteRepository.deleteQuete(queteName);
                     queteRepository.createQuete(generateNewQuest());
-                    moneyDatastore.deposit(reward);
+                    gameDatastore.deposit(reward);
 
                     return new ResultatQuete.SuccesQuete(queteName, deaths, reward);
                 } else {
@@ -76,7 +83,7 @@ public class QueteService {
                 var removedHero = newMembers.removeFirst();
                 deaths.add(removedHero.name());
             }
-            var newGroup = new Groupe(groupe.name(), newMembers);
+            var newGroup = new Groupe(newMembers);
             groupeDatastore.saveGroupe(newGroup);
             return deaths;
         } else {
