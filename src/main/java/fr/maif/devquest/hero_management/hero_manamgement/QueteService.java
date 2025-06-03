@@ -44,11 +44,11 @@ public class QueteService {
             return maybeQuete.map(quete -> {
                 var luck = random.nextInt(101);
                 var memberCount = groupe.heros().size();
-                boolean success = luck > quete.difficulte().percentageToReach(memberCount);
+                boolean success = luck + quete.difficulte().basePercentage(memberCount) > 100;
                 int deathCount = 0;
                 if(success) {
                     int deathLuck = random.nextInt(101);
-                    int deathDiff = quete.difficulte().deathProbabaility(memberCount) - deathLuck;
+                    int deathDiff = deathLuck - quete.difficulte().basePercentage(memberCount);
                     deathCount = Math.max(0, Math.max(0, deathDiff / 20) - 1);
                     long reward = quete.difficulte().reward(memberCount - deathCount);
                     Set<String> deaths = mettreAJourLeGroupe(groupe, deathCount);
@@ -59,7 +59,7 @@ public class QueteService {
 
                     return new ResultatQuete.SuccesQuete(queteName, deaths, reward);
                 } else {
-                    int diff =  quete.difficulte().percentageToReach(memberCount) - luck;
+                    int diff = luck - quete.difficulte().basePercentage(memberCount);
                     deathCount = (diff / 20) + 1;
                     Set<String> deaths = mettreAJourLeGroupe(groupe, deathCount);
                     return new ResultatQuete.EchecQuete(queteName, deaths);
@@ -72,7 +72,7 @@ public class QueteService {
         if(deathCount > 0) {
             var newMembers = new ArrayList<>(groupe.heros());
             Set<String> deaths = new HashSet<>();
-            for(int remainingToKill = deathCount; remainingToKill > 0; remainingToKill --) {
+            for(int remainingToKill = deathCount; remainingToKill > 0 && !newMembers.isEmpty(); remainingToKill --) {
                 var removedHero = newMembers.removeFirst();
                 deaths.add(removedHero.name());
             }

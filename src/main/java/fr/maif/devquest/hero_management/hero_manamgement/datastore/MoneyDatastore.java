@@ -23,4 +23,8 @@ public class MoneyDatastore {
         this.amount -= amount;
         return this.amount;
     }
+
+    public void reset() {
+        amount = 10_000;
+    }
 }

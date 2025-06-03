@@ -9,3 +9,9 @@ export interface Quest {
   nom: string;
   difficulte: string;
 }
+
+export interface QuestResult {
+  name: string;
+  gain?: number;
+  morts: string[];
+}

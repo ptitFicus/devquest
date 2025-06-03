@@ -31,7 +31,7 @@ export interface TeamMember {
 export function TeamMember(props: {
   details: TeamMember;
   light: boolean;
-  actions: { name: string; callback: () => any }[];
+  actions: { name?: string; callback?: () => any; disabled?: boolean }[];
   achievements: boolean;
 }) {
   const { role, name, achievements } = props.details;
@@ -67,14 +67,20 @@ export function TeamMember(props: {
           )}
         </div>
       )}
-      {props?.actions?.map(({ name, callback }) => {
-        return <button onClick={callback}>{name}</button>;
-      })}
+      {props?.actions
+        ?.filter((a) => a.name && a.callback)
+        ?.map(({ name, callback, disabled }) => {
+          return (
+            <button disabled={disabled} onClick={callback}>
+              {name}
+            </button>
+          );
+        })}
     </div>
   );
 }
 
-function classLogo(className: string) {
+export function classLogo(className: string) {
   switch (className) {
     case "archer":
       return archer;

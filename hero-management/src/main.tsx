@@ -1,42 +1,78 @@
-import { StrictMode } from 'react'
-import ReactDOM from 'react-dom/client'
-import { RouterProvider, createRouter } from '@tanstack/react-router'
+import { StrictMode, useEffect, useState } from "react";
+import ReactDOM from "react-dom/client";
+import { RouterProvider, createRouter } from "@tanstack/react-router";
 
 // Import the generated route tree
-import { routeTree } from './routeTree.gen'
+import { routeTree } from "./routeTree.gen";
 
-import './styles.css'
-import reportWebVitals from './reportWebVitals.ts'
+import "./styles.css";
+import reportWebVitals from "./reportWebVitals.ts";
+import { MoneyContext } from "./moneyContext.ts";
 
 // Create a new router instance
 const router = createRouter({
   routeTree,
   context: {},
-  defaultPreload: 'intent',
+  defaultPreload: "intent",
   scrollRestoration: true,
   defaultStructuralSharing: true,
   defaultPreloadStaleTime: 0,
-})
+});
 
 // Register the router instance for type safety
-declare module '@tanstack/react-router' {
+declare module "@tanstack/react-router" {
   interface Register {
-    router: typeof router
+    router: typeof router;
   }
 }
 
 // Render the app
-const rootElement = document.getElementById('app')
+const rootElement = document.getElementById("app");
 if (rootElement && !rootElement.innerHTML) {
-  const root = ReactDOM.createRoot(rootElement)
+  const root = ReactDOM.createRoot(rootElement);
   root.render(
     <StrictMode>
+      <Layout />
+    </StrictMode>
+  );
+}
+
+function fetchMoney() {
+  return fetch("/api/game").then((resp) => resp.json());
+}
+
+function Layout() {
+  const [money, setMoney] = useState(0);
+  useEffect(() => {
+    fetchMoney().then(({ money }) => setMoney(money));
+  }, []);
+  return (
+    <MoneyContext.Provider
+      value={{
+        money,
+        refreshMoney: () => {
+          fetchMoney().then(({ money }) => setMoney(money));
+        },
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center",
+          padding: "0 2rem",
+        }}
+      >
+        <h1>Hero management</h1>
+        <div style={{ fontWeight: "bold", fontSize: "1.2rem" }}>{money} 💰</div>
+      </div>
       <RouterProvider router={router} />
-    </StrictMode>,
-  )
+    </MoneyContext.Provider>
+  );
 }
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals()
+reportWebVitals();

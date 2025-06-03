@@ -34,9 +34,9 @@ export function TeamDetails({
               <TeamMember
                 details={member}
                 light={true}
-                actions={memberActions?.map((actionCreator) =>
-                  actionCreator(member)
-                )}
+                actions={memberActions?.map((actionCreator) => {
+                  return actionCreator(member);
+                })}
                 achievements={false}
               />
             </li>

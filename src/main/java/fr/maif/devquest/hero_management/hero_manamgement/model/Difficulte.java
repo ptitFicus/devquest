@@ -2,10 +2,10 @@ package fr.maif.devquest.hero_management.hero_manamgement.model;
 
 public enum Difficulte {
     FACILE(50, 100, 10),
-    MOYEN(40, 300, 9),
-    DIFFICILE(30, 600, 7),
-    EXTREME(20, 5_000, 5),
-    IMPOSSIBLE(10, 10_000, 3);
+    MOYEN(30, 300, 8),
+    DIFFICILE(20, 600, 6),
+    EXTREME(10, 5_000, 3),
+    IMPOSSIBLE(5, 10_000, 1);
 
     public int probabailiteSucces;
     public long recompenseDeBase;
@@ -17,12 +17,8 @@ public enum Difficulte {
         this.augmentationDeProbabiliteParMembre = augmentationDeProbabiliteParMembre;
     }
 
-    public int percentageToReach(int memberCount) {
-        return 100 - (probabailiteSucces + memberCount * augmentationDeProbabiliteParMembre);
-    }
-
-    public int deathProbabaility(int memberCount) {
-        return 100 - percentageToReach(memberCount);
+    public int basePercentage(int memberCount) {
+        return probabailiteSucces + memberCount * augmentationDeProbabiliteParMembre;
     }
 
     public long reward(int memberCount) {
