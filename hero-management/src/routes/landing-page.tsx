@@ -16,6 +16,7 @@ function RouteComponent() {
         right: "0",
         left: "0",
         backgroundImage: `url(${background})`,
+        zIndex: 1001,
       }}
     >
       <div
@@ -28,7 +29,7 @@ function RouteComponent() {
           height: "100vh",
         }}
       >
-        <h1>Welcome to Hero Management</h1>
+        <h1>Bienvenue aventurier !</h1>
         <form
           onSubmit={(e) => {
             e.preventDefault();

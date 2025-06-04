@@ -1,6 +1,10 @@
 import { StrictMode, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
-import { RouterProvider, createRouter } from "@tanstack/react-router";
+import {
+  RouterProvider,
+  createRouter,
+  useMatchRoute,
+} from "@tanstack/react-router";
 
 // Import the generated route tree
 import { routeTree } from "./routeTree.gen";
@@ -72,7 +76,6 @@ function Layout() {
         >
           <h1>Hero management</h1>
           <div>
-            {" "}
             <div
               data-testid="money"
               style={{ fontWeight: "bold", fontSize: "1.2rem" }}

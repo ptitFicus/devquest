@@ -35,6 +35,7 @@ public class QueteService {
     public void setSeed(Long seed) {
         if(Objects.isNull(seed)) {
             this.random = new Random();
+            return;
         }
         this.random = new Random(seed);
     }
