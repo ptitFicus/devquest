@@ -1,0 +1,20 @@
+[
+  {
+    "name": "fr.maif.devquest.hero_management.hero_manamgement.model.ResultatQuete",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true,
+    "allDeclaredFields": true
+  },
+  {
+    "name": "fr.maif.devquest.hero_management.hero_manamgement.model.SuccesQuete",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true,
+    "allDeclaredFields": true
+  },
+  {
+    "name": "fr.maif.devquest.hero_management.hero_manamgement.model.EchecQuete",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true,
+    "allDeclaredFields": true
+  }
+]
