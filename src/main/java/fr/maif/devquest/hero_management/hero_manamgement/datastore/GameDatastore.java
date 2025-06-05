@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 public class GameDatastore {
     private long amount = 10_000;
     private String name;
-    private Long seed;
+    private long score = 0;
 
     public long remainingMoney() {
         return amount;
@@ -29,15 +29,24 @@ public class GameDatastore {
     public void reset() {
         amount = 10_000;
         name = null;
-        seed = null;
+        this.score = 0;
     }
 
-    public void init(String name, Long seed) {
+    public void init(String name) {
         this.name = name;
-        this.seed = seed;
+        this.score = 0;
     }
 
     public String getName() {
         return name;
+    }
+
+    public long incrementScore(long scoreToAdd) {
+        this.score += scoreToAdd;
+        return this.score;
+    }
+
+    public long readScore() {
+        return this.score;
     }
 }

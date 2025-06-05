@@ -64,6 +64,7 @@ public class QueteService {
                     queteRepository.deleteQuete(queteName);
                     queteRepository.createQuete(generateNewQuest());
                     gameDatastore.deposit(reward);
+                    gameDatastore.incrementScore(quete.difficulte().score);
 
                     return new SuccesQuete(queteName, deaths, reward).toOutFormat();
                 } else {

@@ -44,20 +44,24 @@ function fetchMoney() {
 function Layout() {
   const [money, setMoney] = useState(0);
   const [name, setName] = useState("");
+  const [score, setScore] = useState(0);
   useEffect(() => {
     fetchMoney().then(({ money, name }) => {
       setMoney(money);
       setName(name);
+      setScore(score);
     });
   }, []);
   return (
     <MoneyContext.Provider
       value={{
+        score,
         money,
         refreshMoney: () => {
-          fetchMoney().then(({ money, name }) => {
+          fetchMoney().then(({ money, name, score }) => {
             setMoney(money);
             setName(name);
+            setScore(score);
           });
         },
       }}
@@ -86,11 +90,10 @@ function Layout() {
               justifyContent: "center",
             }}
           >
-            <div
-              data-testid="money"
-              style={{ fontWeight: "bold", fontSize: "1.2rem" }}
-            >
-              {name} - {money} 💰
+            <div style={{ fontWeight: "bold", fontSize: "1.2rem" }}>
+              <span data-testid="username">{name}</span> -{" "}
+              <span data-testid="money">{money}</span> 💰 -{" "}
+              <span data-testid="score">{score} ⚔️</span>
             </div>
             <button
               className="devquest-btn-secondary"

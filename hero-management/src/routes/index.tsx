@@ -36,7 +36,7 @@ export const Route = createFileRoute("/")({
 
 function App() {
   const { team, quests } = Route.useLoaderData();
-  const { money } = useContext(MoneyContext);
+  const { money, score } = useContext(MoneyContext);
 
   if ((!team || team?.heros?.length === 0) && money < 1000) {
     return (
@@ -70,6 +70,16 @@ function App() {
           }}
         >
           <h1>Partie terminée !</h1>
+          <div
+            style={{
+              fontWeight: "bold",
+              fontSize: "1.5rem",
+              color: "var(--secondary-color)",
+            }}
+          >
+            Votre score est {score}
+            &nbsp;⚔
+          </div>
           <button
             className="devquest-btn"
             onClick={() => {

@@ -25,13 +25,13 @@ public class GameController {
 
     @GetMapping
     public GameStatus readStatus() {
-        return new GameStatus(gameDatastore.getName(), gameDatastore.remainingMoney());
+        return new GameStatus(gameDatastore.getName(), gameDatastore.remainingMoney(), gameDatastore.readScore());
     }
 
     @PostMapping
     public ResponseEntity<Object> createGame(@RequestBody GameInit gameInit) {
         gameDatastore.reset();
-        gameDatastore.init(gameInit.name(), gameInit.seed());
+        gameDatastore.init(gameInit.name());
         queteService.setSeed(gameInit.seed());
         queteService.reset();
         heroDatastore.reset();
