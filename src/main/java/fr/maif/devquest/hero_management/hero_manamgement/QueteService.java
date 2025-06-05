@@ -45,7 +45,7 @@ public class QueteService {
     }
 
 
-    public ResultatQuete realiserQuete(String queteName) {
+    public ResultatQueteOut realiserQuete(String queteName) {
         Optional<Groupe> maybeGroupe = groupeDatastore.groupe;
         Optional<Quete> maybeQuete = queteRepository.readQuete(queteName);
         return maybeGroupe.flatMap(groupe -> {
@@ -65,12 +65,12 @@ public class QueteService {
                     queteRepository.createQuete(generateNewQuest());
                     gameDatastore.deposit(reward);
 
-                    return new SuccesQuete(queteName, deaths, reward);
+                    return new SuccesQuete(queteName, deaths, reward).toOutFormat();
                 } else {
                     int diff = luck - quete.difficulte().basePercentage(memberCount);
                     deathCount = (diff / 20) + 1;
                     Set<String> deaths = mettreAJourLeGroupe(groupe, deathCount);
-                    return new EchecQuete(queteName, deaths);
+                    return new EchecQuete(queteName, deaths).toOutFormat();
                 }
             });
         }).orElseThrow(() -> new RuntimeException("Groupe ou quête inconnu(e)"));

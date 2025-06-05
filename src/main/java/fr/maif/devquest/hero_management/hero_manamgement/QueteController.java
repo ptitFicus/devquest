@@ -3,6 +3,7 @@ package fr.maif.devquest.hero_management.hero_manamgement;
 import fr.maif.devquest.hero_management.hero_manamgement.datastore.GameDatastore;
 import fr.maif.devquest.hero_management.hero_manamgement.model.Quete;
 import fr.maif.devquest.hero_management.hero_manamgement.model.ResultatQuete;
+import fr.maif.devquest.hero_management.hero_manamgement.model.ResultatQueteOut;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,7 +25,7 @@ public class QueteController {
     }
 
     @PostMapping("/{quete}/_commencer")
-    public ResultatQuete realiserQuete(@PathVariable("quete") String quete)  {
+    public ResultatQueteOut realiserQuete(@PathVariable("quete") String quete)  {
         return queteService.realiserQuete(quete);
     }
 

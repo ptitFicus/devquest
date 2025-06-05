@@ -188,7 +188,7 @@ function QuestList({
             margin: "2rem",
             top: "0",
             bottom: "0",
-            overflow: "scroll",
+            overflowY: "scroll",
           }}
         >
           <h2
