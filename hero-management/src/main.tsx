@@ -47,15 +47,22 @@ function fetchMoney() {
 
 function Layout() {
   const [money, setMoney] = useState(0);
+  const [name, setName] = useState("");
   useEffect(() => {
-    fetchMoney().then(({ money }) => setMoney(money));
+    fetchMoney().then(({ money, name }) => {
+      setMoney(money);
+      setName(name);
+    });
   }, []);
   return (
     <MoneyContext.Provider
       value={{
         money,
         refreshMoney: () => {
-          fetchMoney().then(({ money }) => setMoney(money));
+          fetchMoney().then(({ money, name }) => {
+            setMoney(money);
+            setName(name);
+          });
         },
       }}
     >
@@ -70,26 +77,34 @@ function Layout() {
             justifyContent: "space-between",
             alignItems: "center",
             padding: "0 2rem",
-            backgroundColor: "rgba(255,255,255,0.5)",
+            backgroundColor: "var(--sable)",
             zIndex: 100,
           }}
         >
-          <h1>Hero management</h1>
-          <div>
+          <h1>Hero manager</h1>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-end",
+              justifyContent: "center",
+            }}
+          >
             <div
               data-testid="money"
               style={{ fontWeight: "bold", fontSize: "1.2rem" }}
             >
-              {money} 💰
+              {name} - {money} 💰
             </div>
             <button
+              className="devquest-btn-secondary"
               onClick={() => {
                 fetch("/api/_reset", { method: "DELETE" }).then(() => {
-                  location.reload();
+                  location.replace("/landing-page");
                 });
               }}
             >
-              Restart game
+              Abandonner
             </button>
           </div>
         </header>

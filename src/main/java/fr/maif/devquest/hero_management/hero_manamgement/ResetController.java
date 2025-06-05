@@ -29,7 +29,7 @@ public class ResetController {
         queteService.reset();
         heroDatastore.reset();
         groupeDatastore.reset();
-        
+
         return ResponseEntity.noContent().build();
     }
 

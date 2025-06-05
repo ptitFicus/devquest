@@ -37,7 +37,7 @@ export function TeamDetails({
                 actions={memberActions?.map((actionCreator) => {
                   return actionCreator(member);
                 })}
-                achievements={false}
+                achievements={true}
               />
             </li>
           );

@@ -39,8 +39,9 @@ export function TeamMember(props: {
     <div
       style={{
         padding: "0.5rem 1rem",
-        border: "1px solid red",
-        backgroundColor: "orange",
+        border: "1px solid var(--tertiary-color)",
+        backgroundColor: "var(--vert)",
+        color: "white",
         borderRadius: "0.5rem",
         display: "flex",
         flexDirection: "column",
@@ -58,20 +59,22 @@ export function TeamMember(props: {
       />
       {props?.achievements && (
         <div style={{ display: "flex", justifyContent: "space-between" }}>
-          {!props?.light && (
-            <ul style={{ listStyleType: "none", padding: "0" }}>
-              {achievements.map((achievement) => {
-                return <li>{achievement}</li>;
-              })}
-            </ul>
-          )}
+          <ul style={{ listStyleType: "none", padding: "0" }}>
+            {achievements.map((achievement) => {
+              return <li>{achievement}</li>;
+            })}
+          </ul>
         </div>
       )}
       {props?.actions
         ?.filter((a) => a.name && a.callback)
         ?.map(({ name, callback, disabled }) => {
           return (
-            <button disabled={disabled} onClick={callback}>
+            <button
+              className="devquest-btn-secondary"
+              disabled={disabled}
+              onClick={callback}
+            >
               {name}
             </button>
           );

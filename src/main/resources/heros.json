@@ -9,7 +9,7 @@
     ]
   },
   {
-    "name": "Mirelda l’Onguentée",
+    "name": "Mirelda l'Onguentée",
     "role": "shaman",
     "achievements": [
       "🌪️ A invoqué une tornade pour sécher sa lessive",
@@ -22,7 +22,7 @@
     "role": "elf",
     "achievements": [
       "🍷 A battu un troll au concours de vin sans renverser une goutte",
-      "🎻 A ensorcelé une harpe pour qu’elle compose seule",
+      "🎻 A ensorcelé une harpe pour qu'elle compose seule",
       "🧼 A glissé sur une colline savonneuse pour échapper à des brigands"
     ]
   },
@@ -49,7 +49,7 @@
     "role": "king",
     "achievements": [
       "🍰 A interdit les gâteaux trop secs par décret royal",
-      "👑 A perdu sa couronne dans un puits... et l’a remplacée par une marmite",
+      "👑 A perdu sa couronne dans un puits... et l'a remplacée par une marmite",
       "🪕 A imposé la musique banjo à la cour pendant un mois"
     ]
   },
@@ -58,7 +58,7 @@
     "role": "archer",
     "achievements": [
       "🏹 A décoché une flèche dans sa propre botte par mégarde",
-      "🐿️ A été adopté par une famille d’écureuils",
+      "🐿️ A été adopté par une famille d'écureuils",
       "🍎 A visé une pomme, a touché un dragon (accidentellement)"
     ]
   },
@@ -68,16 +68,16 @@
     "achievements": [
       "💀 A organisé une fête surprise pour des squelettes",
       "🎲 A joué aux dés avec un fantôme tricheur",
-      "🪦 A perdu son grimoire dans un cimetière... puis l’a retrouvé dans une tombe"
+      "🪦 A perdu son grimoire dans un cimetière... puis l'a retrouvé dans une tombe"
     ]
   },
   {
     "name": "Théobald du Fond-des-Bois",
     "role": "shaman",
     "achievements": [
-      "👞 A marché 20 lieues avec une botte à l’envers",
+      "👞 A marché 20 lieues avec une botte à l'envers",
       "🎤 A dirigé une chorale de bardes enrhumés",
-      "🕺 A dansé trois jours d’affilée pour sauver un fromage maudit"
+      "🕺 A dansé trois jours d'affilée pour sauver un fromage maudit"
     ]
   },
   {
@@ -102,8 +102,8 @@
     "name": "Borulf Tonnefer",
     "role": "dwarf",
     "achievements": [
-      "🛢️ A roulé dans un tonneau jusqu’à la frontière orque",
-      "🥨 A mangé un bouclier par erreur en pensant que c’était un bretzel",
+      "🛢️ A roulé dans un tonneau jusqu'à la frontière orque",
+      "🥨 A mangé un bouclier par erreur en pensant que c'était un bretzel",
       "🎺 A joué du cor de guerre pour appeler ses chèvres"
     ]
   },
@@ -122,7 +122,7 @@
     "achievements": [
       "🪶 A prédit la pluie avec des plumes de poulet",
       "🐝 A négocié un traité de paix entre les abeilles et les bardes",
-      "🛖 A invoqué un esprit... qui s’est endormi aussitôt"
+      "🛖 A invoqué un esprit... qui s'est endormi aussitôt"
     ]
   },
   {
@@ -130,8 +130,8 @@
     "role": "king",
     "achievements": [
       "🫅 A signé une alliance avec une armée de statues vivantes",
-      "🧄 A banni l’ail après un rêve étrange",
-      "📦 A enfermé ses conseillers dans une boîte pour ‘stimuler leur réflexion’"
+      "🧄 A banni l'ail après un rêve étrange",
+      "📦 A enfermé ses conseillers dans une boîte pour ‘stimuler leur réflexion'"
     ]
   },
   {
@@ -153,10 +153,10 @@
     ]
   },
   {
-    "name": "Quenilda à l’Oeil-Pâle",
+    "name": "Quenilda à l'Oeil-Pâle",
     "role": "wizard",
     "achievements": [
-      "🛖 A invoqué un esprit... qui s’est endormi aussitôt",
+      "🛖 A invoqué un esprit... qui s'est endormi aussitôt",
       "🌪️ A invoqué une tornade pour sécher sa lessive",
       "🧊 A gelé son propre reflet en se complimentant trop fort"
     ]
@@ -176,7 +176,7 @@
     "achievements": [
       "🎆 A accidentellement illuminé une ville avec une baguette fourchue",
       "⏳ A remonté le temps pour rater un rendez-vous encore plus tôt",
-      "🛢️ A roulé dans un tonneau jusqu’à la frontière orque"
+      "🛢️ A roulé dans un tonneau jusqu'à la frontière orque"
     ]
   },
   {
@@ -194,11 +194,11 @@
     "achievements": [
       "🐸 A accidentellement transformé un roi en grenouille",
       "🪶 A négocié une paix durable entre hiboux et belettes",
-      "🛖 A invoqué un esprit... qui s’est endormi aussitôt"
+      "🛖 A invoqué un esprit... qui s'est endormi aussitôt"
     ]
   },
   {
-    "name": "Elowen à l’Oeil-Pâle",
+    "name": "Elowen à l'Oeil-Pâle",
     "role": "wizard",
     "achievements": [
       "🪑 A défié un trône à un concours de regard",
@@ -211,7 +211,7 @@
     "role": "dwarf",
     "achievements": [
       "🧃 A tenté de distiller de la potion avec du jus de navet",
-      "📦 A enfermé ses conseillers dans une boîte pour ‘stimuler leur réflexion’",
+      "📦 A enfermé ses conseillers dans une boîte pour ‘stimuler leur réflexion'",
       "🎩 A sorti un mouton vivant de son chapeau"
     ]
   },
@@ -266,7 +266,7 @@
     "achievements": [
       "🐸 A accidentellement transformé un roi en grenouille",
       "📚 A créé une bibliothèque hantée par des critiques littéraires",
-      "🛖 A invoqué un esprit... qui s’est endormi aussitôt"
+      "🛖 A invoqué un esprit... qui s'est endormi aussitôt"
     ]
   },
   {
@@ -275,14 +275,14 @@
     "achievements": [
       "💤 A endormi une armée entière en racontant une anecdote",
       "🎯 A lancé une hache qui a gagné au jeu de fléchettes",
-      "🎻 A ensorcelé une harpe pour qu’elle compose seule"
+      "🎻 A ensorcelé une harpe pour qu'elle compose seule"
     ]
   },
   {
     "name": "Isolde Lame-Sourde",
     "role": "king",
     "achievements": [
-      "👑 A perdu sa couronne dans un puits... et l’a remplacée par une marmite",
+      "👑 A perdu sa couronne dans un puits... et l'a remplacée par une marmite",
       "💤 A endormi une armée entière en racontant une anecdote",
       "⏳ A remonté le temps pour rater un rendez-vous encore plus tôt"
     ]
@@ -300,8 +300,8 @@
     "name": "Dameon des Ombres",
     "role": "wizard",
     "achievements": [
-      "📦 A enfermé ses conseillers dans une boîte pour ‘stimuler leur réflexion’",
-      "👑 A perdu sa couronne dans un puits... et l’a remplacée par une marmite",
+      "📦 A enfermé ses conseillers dans une boîte pour ‘stimuler leur réflexion'",
+      "👑 A perdu sa couronne dans un puits... et l'a remplacée par une marmite",
       "🐍 A dressé un serpent en lui récitant des devinettes"
     ]
   },
@@ -310,7 +310,7 @@
     "role": "necromancer",
     "achievements": [
       "⏳ A remonté le temps pour rater un rendez-vous encore plus tôt",
-      "📦 A enfermé ses conseillers dans une boîte pour ‘stimuler leur réflexion’",
+      "📦 A enfermé ses conseillers dans une boîte pour ‘stimuler leur réflexion'",
       "🐍 A dressé un serpent en lui récitant des devinettes"
     ]
   },
@@ -318,7 +318,7 @@
     "name": "Seraphine du Fond-des-Bois",
     "role": "wizard",
     "achievements": [
-      "👑 A perdu sa couronne dans un puits... et l’a remplacée par une marmite",
+      "👑 A perdu sa couronne dans un puits... et l'a remplacée par une marmite",
       "🪑 A défié un trône à un concours de regard",
       "🍺 A vidé une taverne de ses bières sans payer"
     ]
@@ -337,7 +337,7 @@
     "role": "king",
     "achievements": [
       "🧼 A glissé sur une colline savonneuse pour échapper à des brigands",
-      "🥨 A mangé un bouclier par erreur en pensant que c’était un bretzel",
+      "🥨 A mangé un bouclier par erreur en pensant que c'était un bretzel",
       "🦆 A discuté politique avec une armée de canards"
     ]
   },
@@ -365,7 +365,7 @@
     "achievements": [
       "🐓 A dompté un coq géant avec une flûte cassée",
       "🪕 A imposé la musique banjo à la cour pendant un mois",
-      "🎻 A ensorcelé une harpe pour qu’elle compose seule"
+      "🎻 A ensorcelé une harpe pour qu'elle compose seule"
     ]
   },
   {
@@ -399,9 +399,9 @@
     "name": "Wulfgar de Griseval",
     "role": "archer",
     "achievements": [
-      "🛖 A invoqué un esprit... qui s’est endormi aussitôt",
+      "🛖 A invoqué un esprit... qui s'est endormi aussitôt",
       "🪶 A prédit la pluie avec des plumes de poulet",
-      "📦 A enfermé ses conseillers dans une boîte pour ‘stimuler leur réflexion’"
+      "📦 A enfermé ses conseillers dans une boîte pour ‘stimuler leur réflexion'"
     ]
   },
   {
@@ -428,7 +428,7 @@
     "achievements": [
       "🧊 A gelé son propre reflet en se complimentant trop fort",
       "🪶 A prédit la pluie avec des plumes de poulet",
-      "📦 A enfermé ses conseillers dans une boîte pour ‘stimuler leur réflexion’"
+      "📦 A enfermé ses conseillers dans une boîte pour ‘stimuler leur réflexion'"
     ]
   },
   {
@@ -453,16 +453,16 @@
     "name": "Ysoria Tête-de-Loup",
     "role": "elf",
     "achievements": [
-      "🥨 A mangé un bouclier par erreur en pensant que c’était un bretzel",
+      "🥨 A mangé un bouclier par erreur en pensant que c'était un bretzel",
       "🧃 A tenté de distiller de la potion avec du jus de navet",
-      "👑 A perdu sa couronne dans un puits... et l’a remplacée par une marmite"
+      "👑 A perdu sa couronne dans un puits... et l'a remplacée par une marmite"
     ]
   },
   {
     "name": "Tormund Boisbrume",
     "role": "archer",
     "achievements": [
-      "🥨 A mangé un bouclier par erreur en pensant que c’était un bretzel",
+      "🥨 A mangé un bouclier par erreur en pensant que c'était un bretzel",
       "🪶 A négocié une paix durable entre hiboux et belettes",
       "🐝 A négocié un traité de paix entre les abeilles et les bardes"
     ]
@@ -477,11 +477,11 @@
     ]
   },
   {
-    "name": "Kaelis l’Ensorceleur",
+    "name": "Kaelis l'Ensorceleur",
     "role": "shaman",
     "achievements": [
       "🧃 A tenté de distiller de la potion avec du jus de navet",
-      "🎻 A ensorcelé une harpe pour qu’elle compose seule",
+      "🎻 A ensorcelé une harpe pour qu'elle compose seule",
       "🪶 A prédit la pluie avec des plumes de poulet"
     ]
   },
@@ -495,7 +495,7 @@
     ]
   },
   {
-    "name": "Tormund à l’Oeil-Pâle",
+    "name": "Tormund à l'Oeil-Pâle",
     "role": "necromancer",
     "achievements": [
       "🌪️ A invoqué une tornade pour sécher sa lessive",
@@ -504,7 +504,7 @@
     ]
   },
   {
-    "name": "Maelis à l’Oeil-Pâle",
+    "name": "Maelis à l'Oeil-Pâle",
     "role": "wizard",
     "achievements": [
       "⏳ A remonté le temps pour rater un rendez-vous encore plus tôt",
@@ -516,18 +516,18 @@
     "name": "Maelis Lac-Noir",
     "role": "necromancer",
     "achievements": [
-      "🎻 A ensorcelé une harpe pour qu’elle compose seule",
-      "🛖 A invoqué un esprit... qui s’est endormi aussitôt",
-      "📦 A enfermé ses conseillers dans une boîte pour ‘stimuler leur réflexion’"
+      "🎻 A ensorcelé une harpe pour qu'elle compose seule",
+      "🛖 A invoqué un esprit... qui s'est endormi aussitôt",
+      "📦 A enfermé ses conseillers dans une boîte pour ‘stimuler leur réflexion'"
     ]
   },
   {
-    "name": "Seraphine l’Ensorceleur",
+    "name": "Seraphine l'Ensorceleur",
     "role": "necromancer",
     "achievements": [
       "📜 A écrit une pièce de théâtre pour des gobelins illettrés",
       "🕯️ A ressuscité une chandelle oubliée",
-      "🛖 A invoqué un esprit... qui s’est endormi aussitôt"
+      "🛖 A invoqué un esprit... qui s'est endormi aussitôt"
     ]
   },
   {
@@ -540,7 +540,7 @@
     ]
   },
   {
-    "name": "Wulfgar l’Ensorceleur",
+    "name": "Wulfgar l'Ensorceleur",
     "role": "wizard",
     "achievements": [
       "🌪️ A invoqué une tornade pour sécher sa lessive",
@@ -552,7 +552,7 @@
     "name": "Brunhilde d'Épine-Sang",
     "role": "necromancer",
     "achievements": [
-      "👑 A perdu sa couronne dans un puits... et l’a remplacée par une marmite",
+      "👑 A perdu sa couronne dans un puits... et l'a remplacée par une marmite",
       "🎩 A sorti un mouton vivant de son chapeau",
       "🐓 A dompté un coq géant avec une flûte cassée"
     ]
@@ -581,7 +581,7 @@
     "achievements": [
       "🍷 A battu un troll au concours de vin sans renverser une goutte",
       "🧃 A tenté de distiller de la potion avec du jus de navet",
-      "🥨 A mangé un bouclier par erreur en pensant que c’était un bretzel"
+      "🥨 A mangé un bouclier par erreur en pensant que c'était un bretzel"
     ]
   },
   {
@@ -590,7 +590,7 @@
     "achievements": [
       "💤 A endormi une armée entière en racontant une anecdote",
       "🍷 A battu un troll au concours de vin sans renverser une goutte",
-      "👑 A perdu sa couronne dans un puits... et l’a remplacée par une marmite"
+      "👑 A perdu sa couronne dans un puits... et l'a remplacée par une marmite"
     ]
   },
   {
@@ -606,13 +606,13 @@
     "name": "Dameon de Griseval",
     "role": "wizard",
     "achievements": [
-      "🥨 A mangé un bouclier par erreur en pensant que c’était un bretzel",
+      "🥨 A mangé un bouclier par erreur en pensant que c'était un bretzel",
       "🌿 A ressuscité une plante verte en lui chantant une berceuse",
       "🧊 A gelé son propre reflet en se complimentant trop fort"
     ]
   },
   {
-    "name": "Fendrel l’Ensorceleur",
+    "name": "Fendrel l'Ensorceleur",
     "role": "knight",
     "achievements": [
       "💤 A endormi une armée entière en racontant une anecdote",
@@ -626,7 +626,7 @@
     "achievements": [
       "🪕 A imposé la musique banjo à la cour pendant un mois",
       "🎆 A accidentellement illuminé une ville avec une baguette fourchue",
-      "🛢️ A roulé dans un tonneau jusqu’à la frontière orque"
+      "🛢️ A roulé dans un tonneau jusqu'à la frontière orque"
     ]
   },
   {
@@ -634,7 +634,7 @@
     "role": "elf",
     "achievements": [
       "🐸 A accidentellement transformé un roi en grenouille",
-      "🎻 A ensorcelé une harpe pour qu’elle compose seule",
+      "🎻 A ensorcelé une harpe pour qu'elle compose seule",
       "⛏️ A sculpté un dragon dans une montagne par erreur"
     ]
   },
@@ -642,9 +642,9 @@
     "name": "Jorund Tête-de-Loup",
     "role": "necromancer",
     "achievements": [
-      "👑 A perdu sa couronne dans un puits... et l’a remplacée par une marmite",
+      "👑 A perdu sa couronne dans un puits... et l'a remplacée par une marmite",
       "🌿 A ressuscité une plante verte en lui chantant une berceuse",
-      "🛖 A invoqué un esprit... qui s’est endormi aussitôt"
+      "🛖 A invoqué un esprit... qui s'est endormi aussitôt"
     ]
   },
   {
@@ -652,7 +652,7 @@
     "role": "wizard",
     "achievements": [
       "🎩 A sorti un mouton vivant de son chapeau",
-      "🛢️ A roulé dans un tonneau jusqu’à la frontière orque",
+      "🛢️ A roulé dans un tonneau jusqu'à la frontière orque",
       "🏹 A décoché une flèche dans sa propre botte par mégarde"
     ]
   },
@@ -661,7 +661,7 @@
     "role": "king",
     "achievements": [
       "📜 A écrit une pièce de théâtre pour des gobelins illettrés",
-      "📦 A enfermé ses conseillers dans une boîte pour ‘stimuler leur réflexion’",
+      "📦 A enfermé ses conseillers dans une boîte pour ‘stimuler leur réflexion'",
       "🪑 A défié un trône à un concours de regard"
     ]
   },
@@ -670,24 +670,24 @@
     "role": "dwarf",
     "achievements": [
       "🦆 A discuté politique avec une armée de canards",
-      "📦 A enfermé ses conseillers dans une boîte pour ‘stimuler leur réflexion’",
+      "📦 A enfermé ses conseillers dans une boîte pour ‘stimuler leur réflexion'",
       "🪑 A défié un trône à un concours de regard"
     ]
   },
   {
-    "name": "Peredur l’Ensorceleur",
+    "name": "Peredur l'Ensorceleur",
     "role": "king",
     "achievements": [
-      "🧄 A banni l’ail après un rêve étrange",
+      "🧄 A banni l'ail après un rêve étrange",
       "📜 A écrit une pièce de théâtre pour des gobelins illettrés",
-      "🥨 A mangé un bouclier par erreur en pensant que c’était un bretzel"
+      "🥨 A mangé un bouclier par erreur en pensant que c'était un bretzel"
     ]
   },
   {
     "name": "Zanric Tête-de-Loup",
     "role": "wizard",
     "achievements": [
-      "🧄 A banni l’ail après un rêve étrange",
+      "🧄 A banni l'ail après un rêve étrange",
       "🌿 A ressuscité une plante verte en lui chantant une berceuse",
       "🌪️ A invoqué une tornade pour sécher sa lessive"
     ]
@@ -706,7 +706,7 @@
     "role": "necromancer",
     "achievements": [
       "🧊 A gelé son propre reflet en se complimentant trop fort",
-      "🛢️ A roulé dans un tonneau jusqu’à la frontière orque",
+      "🛢️ A roulé dans un tonneau jusqu'à la frontière orque",
       "🐝 A négocié un traité de paix entre les abeilles et les bardes"
     ]
   },
@@ -715,7 +715,7 @@
     "role": "king",
     "achievements": [
       "🎆 A accidentellement illuminé une ville avec une baguette fourchue",
-      "🎻 A ensorcelé une harpe pour qu’elle compose seule",
+      "🎻 A ensorcelé une harpe pour qu'elle compose seule",
       "❄️ A tricoté une écharpe magique de 18 kilomètres"
     ]
   },
@@ -723,7 +723,7 @@
     "name": "Norwyn Crochetemps",
     "role": "archer",
     "achievements": [
-      "🎻 A ensorcelé une harpe pour qu’elle compose seule",
+      "🎻 A ensorcelé une harpe pour qu'elle compose seule",
       "🧃 A tenté de distiller de la potion avec du jus de navet",
       "📚 A créé une bibliothèque hantée par des critiques littéraires"
     ]
@@ -751,8 +751,8 @@
     "role": "necromancer",
     "achievements": [
       "💤 A endormi une armée entière en racontant une anecdote",
-      "🛖 A invoqué un esprit... qui s’est endormi aussitôt",
-      "👑 A perdu sa couronne dans un puits... et l’a remplacée par une marmite"
+      "🛖 A invoqué un esprit... qui s'est endormi aussitôt",
+      "👑 A perdu sa couronne dans un puits... et l'a remplacée par une marmite"
     ]
   },
   {
@@ -813,7 +813,7 @@
     "name": "Dameon de Griseval",
     "role": "elf",
     "achievements": [
-      "🧄 A banni l’ail après un rêve étrange",
+      "🧄 A banni l'ail après un rêve étrange",
       "🌿 A ressuscité une plante verte en lui chantant une berceuse",
       "🧼 A glissé sur une colline savonneuse pour échapper à des brigands"
     ]
@@ -840,7 +840,7 @@
     "name": "Quenilda des Ombres",
     "role": "shaman",
     "achievements": [
-      "🥨 A mangé un bouclier par erreur en pensant que c’était un bretzel",
+      "🥨 A mangé un bouclier par erreur en pensant que c'était un bretzel",
       "🍖 A volé un banquet royal pour nourrir un hérisson affamé",
       "🐍 A dressé un serpent en lui récitant des devinettes"
     ]
@@ -864,7 +864,7 @@
     ]
   },
   {
-    "name": "Lazgar l’Ensorceleur",
+    "name": "Lazgar l'Ensorceleur",
     "role": "dwarf",
     "achievements": [
       "🐓 A dompté un coq géant avec une flûte cassée",
@@ -887,7 +887,7 @@
     "achievements": [
       "🌿 A ressuscité une plante verte en lui chantant une berceuse",
       "🌪️ A invoqué une tornade pour sécher sa lessive",
-      "🧄 A banni l’ail après un rêve étrange"
+      "🧄 A banni l'ail après un rêve étrange"
     ]
   },
   {
@@ -900,7 +900,7 @@
     ]
   },
   {
-    "name": "Seraphine à l’Oeil-Pâle",
+    "name": "Seraphine à l'Oeil-Pâle",
     "role": "archer",
     "achievements": [
       "🐓 A dompté un coq géant avec une flûte cassée",
@@ -912,7 +912,7 @@
     "name": "Lazgar Crochetemps",
     "role": "archer",
     "achievements": [
-      "👑 A perdu sa couronne dans un puits... et l’a remplacée par une marmite",
+      "👑 A perdu sa couronne dans un puits... et l'a remplacée par une marmite",
       "🐓 A dompté un coq géant avec une flûte cassée",
       "⛏️ A sculpté un dragon dans une montagne par erreur"
     ]
@@ -921,7 +921,7 @@
     "name": "Dameon Tête-de-Loup",
     "role": "elf",
     "achievements": [
-      "👑 A perdu sa couronne dans un puits... et l’a remplacée par une marmite",
+      "👑 A perdu sa couronne dans un puits... et l'a remplacée par une marmite",
       "🍷 A battu un troll au concours de vin sans renverser une goutte",
       "🦆 A discuté politique avec une armée de canards"
     ]
@@ -936,12 +936,12 @@
     ]
   },
   {
-    "name": "Orlan à l’Oeil-Pâle",
+    "name": "Orlan à l'Oeil-Pâle",
     "role": "shaman",
     "achievements": [
       "🪕 A imposé la musique banjo à la cour pendant un mois",
       "🌿 A ressuscité une plante verte en lui chantant une berceuse",
-      "🥨 A mangé un bouclier par erreur en pensant que c’était un bretzel"
+      "🥨 A mangé un bouclier par erreur en pensant que c'était un bretzel"
     ]
   },
   {
@@ -966,8 +966,8 @@
     "name": "Jorund d'Épine-Sang",
     "role": "archer",
     "achievements": [
-      "🥨 A mangé un bouclier par erreur en pensant que c’était un bretzel",
-      "📦 A enfermé ses conseillers dans une boîte pour ‘stimuler leur réflexion’",
+      "🥨 A mangé un bouclier par erreur en pensant que c'était un bretzel",
+      "📦 A enfermé ses conseillers dans une boîte pour ‘stimuler leur réflexion'",
       "❄️ A tricoté une écharpe magique de 18 kilomètres"
     ]
   },
@@ -975,7 +975,7 @@
     "name": "Vandred Lac-Noir",
     "role": "necromancer",
     "achievements": [
-      "🎻 A ensorcelé une harpe pour qu’elle compose seule",
+      "🎻 A ensorcelé une harpe pour qu'elle compose seule",
       "❄️ A tricoté une écharpe magique de 18 kilomètres",
       "🍖 A volé un banquet royal pour nourrir un hérisson affamé"
     ]
@@ -986,7 +986,7 @@
     "achievements": [
       "🍺 A vidé une taverne de ses bières sans payer",
       "❄️ A tricoté une écharpe magique de 18 kilomètres",
-      "🛖 A invoqué un esprit... qui s’est endormi aussitôt"
+      "🛖 A invoqué un esprit... qui s'est endormi aussitôt"
     ]
   },
   {
@@ -999,7 +999,7 @@
     ]
   },
   {
-    "name": "Jorund à l’Oeil-Pâle",
+    "name": "Jorund à l'Oeil-Pâle",
     "role": "elf",
     "achievements": [
       "⛏️ A sculpté un dragon dans une montagne par erreur",
@@ -1020,7 +1020,7 @@
     "name": "Norwyn Lame-Sourde",
     "role": "wizard",
     "achievements": [
-      "🛢️ A roulé dans un tonneau jusqu’à la frontière orque",
+      "🛢️ A roulé dans un tonneau jusqu'à la frontière orque",
       "🪶 A négocié une paix durable entre hiboux et belettes",
       "⛏️ A sculpté un dragon dans une montagne par erreur"
     ]
