@@ -81,7 +81,7 @@ public class QueteService {
             var newMembers = new ArrayList<>(groupe.heros());
             Set<String> deaths = new HashSet<>();
             for(int remainingToKill = deathCount; remainingToKill > 0 && !newMembers.isEmpty(); remainingToKill --) {
-                var removedHero = newMembers.removeFirst();
+                var removedHero = newMembers.remove(0);
                 deaths.add(removedHero.name());
             }
             var newGroup = new Groupe(newMembers);
@@ -93,8 +93,8 @@ public class QueteService {
     }
 
     private Quete generateNewQuest() {
-        var questNames = loadQuestFile("questnames.json");
-        var questLocations = loadQuestFile("questlocations.json");
+        var questNames = readAsList(Data.QUEST_NAMES);
+        var questLocations = readAsList(Data.QUEST_LOCATIONS);
 
         String name = questNames.get(random.nextInt(questNames.size()));
         String location = questLocations.get(random.nextInt(questLocations.size()));
@@ -118,11 +118,9 @@ public class QueteService {
         return new Quete(questName, diff);
     }
 
-    private List<String> loadQuestFile(String filename) {
+    private List<String> readAsList(String content) {
         try {
-            File resource = resource = new ClassPathResource(filename).getFile();
-            var contentString = Files.readString(resource.toPath());
-            return mapper.readValue(contentString, new TypeReference<List<String>>() {});
+            return mapper.readValue(content, new TypeReference<List<String>>() {});
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

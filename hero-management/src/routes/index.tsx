@@ -20,7 +20,7 @@ export const Route = createFileRoute("/")({
       return { team, quests };
     });
   },
-  beforeLoad: async (foo) => {
+  beforeLoad: async () => {
     const gameInfo = await fetch("/api/game").then((r) => r.json());
     if (gameInfo.name === null) {
       throw redirect({

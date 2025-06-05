@@ -3,6 +3,7 @@ package fr.maif.devquest.hero_management.hero_manamgement.datastore;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import fr.maif.devquest.hero_management.hero_manamgement.Data;
 import fr.maif.devquest.hero_management.hero_manamgement.exceptions.InvalidHeroException;
 import fr.maif.devquest.hero_management.hero_manamgement.model.Groupe;
 import fr.maif.devquest.hero_management.hero_manamgement.model.Hero;
@@ -23,9 +24,7 @@ public class HeroDatastore {
     private ObjectMapper mapper;
 
     private Deque<Hero> readHerosFromFile() throws IOException {
-        File resource = new ClassPathResource("heros.json").getFile();
-        var groupeString = Files.readString(resource.toPath());
-        return mapper.readValue(groupeString, new TypeReference<Deque<Hero>>() {});
+        return mapper.readValue(Data.HEROES, new TypeReference<Deque<Hero>>() {});
     }
 
 
