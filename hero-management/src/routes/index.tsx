@@ -341,7 +341,7 @@ function QuestResultDetails({ result }: { result: QuestResult }) {
         La quête "{result.name.toLowerCase()}"
         {success ? " est un succès" : " a échoué"}
       </h2>
-      {success && `Vous avez gagné ${result.gain}&nbsp;💰`}
+      {success && `Vous avez gagné ${result.gain} 💰`}
       <br />
       {result.morts?.length > 0 ? (
         <>
