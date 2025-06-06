@@ -23,3 +23,5 @@ Exécuter un des binaires du dossier [bin](./bin), les binaires sont disponibles
 - windows
 - linux
 - macos (arm)
+
+Une fois l'application démarrée, ouvrez un navigateur et allez sur le port 8080.
