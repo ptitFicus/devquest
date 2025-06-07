@@ -1,5 +1,3 @@
-<img width="1710" alt="image" src="https://github.com/user-attachments/assets/c0061044-29b9-4752-bfcc-4547974f012e" /># Application de démo pour le hand's on playwright
-
 [Les consignes du hand's on sont ici](https://github.com/ptitFicus/devquest-consignes).
 
 ## Lancer l'application
