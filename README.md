@@ -29,9 +29,9 @@ Une fois l'application démarrée, ouvrez un navigateur et allez sur le port 808
 
 ### Choix d'un nom et d'une seed
 
-Sur l'écran d'accueil (situé à l'url [/landing-page`](http://localhost:8080/landing-page), il faut saisir un nom d'aventurer.
+Sur l'écran d'accueil (situé à l'url [/landing-page](http://localhost:8080/landing-page), il faut saisir un nom d'aventurer.
 
-Il est également possible de choisir une seed qui va "fixer" l'aléatoire pour la partie : deux parties avec la même auront les même comportements aléatoires.
+Il est également possible de choisir une seed qui va "fixer" l'aléatoire pour la partie : deux parties avec la même seed auront les même comportements aléatoires.
 
 <img width="1710" alt="image" src="https://github.com/user-attachments/assets/6a03acd7-8ed1-4c2b-b63f-8081014ccfa6" />
 
